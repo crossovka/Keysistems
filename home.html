@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230826122211">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230826172302">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +30,7 @@
 										<ul class="menu__list">
 											<li class="menu__item"><a href="#" class="menu__link" data-goto-header data-goto="#about-us">О нас</a></li>
 											<li class="menu__item"><a href="#" class="menu__link" data-goto-header data-goto="#products">Услуги</a></li>
+											<li class="menu__item"><a href="#" class="menu__link" data-goto-header data-goto="#news">Публикации</a></li>
 											<li class="menu__item"><a href="#" class="menu__link" data-goto-header data-goto="#location">Где мы находимся</a></li>
 											<li class="menu__item"><a href="#" class="menu__link" data-goto-header data-goto="#contact-us">Связаться с нами</a></li>
 										</ul>
@@ -149,7 +150,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__our-partners partners">
+			<section class="page__our-partners partners" id="partners">
 				<div class="partners__container _container">
 					<h2 class="_title">Наши партнёры</h2>
 					<div class="partners__items">
@@ -204,7 +205,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__technologies technologies">
+			<section class="page__technologies technologies" id="technologies">
 				<div class="technologies__container _container">
 					<h2 class="_title">Технологии</h2>
 					<div class="technologies__items">
@@ -235,7 +236,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__news news">
+			<section class="page__news news" id="news">
 				<div class="news__container _container">
 					<h2 class="_title">Новости и публикации</h2>
 					<!-- Slider main container -->
@@ -354,8 +355,34 @@
 								д.159 оф.405</span>
 						</p>
 					</div>
-					<div class="our-location__map">
-						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A23b533c99c735d2ea7ad888d7838e154ac3e997a7b4170ea29f16ec90764f3ec&amp;width=100%&amp;height=720&amp;lang=ru_RU&amp;scroll=true&_v=20230826122211"></script>
+					<div class="our-location__map" id="wrapMap">
+						<!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A23b533c99c735d2ea7ad888d7838e154ac3e997a7b4170ea29f16ec90764f3ec&amp;width=100%&amp;height=720&amp;lang=ru_RU&amp;scroll=false&_v=20230826172302"></script> -->
+						<iframe style="pointer-events: none;" src="https://yandex.ru/map-widget/v1/?um=constructor%3A730fad67c743017b7282301a4f00ddc944eaf96fbe39b56ae9d46fdb0fe07b5e&amp;source=constructor" width="100%" height="720" frameborder="0"></iframe>
+						<style>
+							#wrapMap {
+								position: relative;
+								cursor: help;
+								overflow: hidden;
+								border-width: 1px;
+								border-style: solid;
+								border-color: rgb(204, 204, 204);
+								border-image: initial;
+							}
+
+							.mapTitle {
+								position: absolute;
+								z-index: 1000;
+								box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 5px;
+								display: none;
+								padding: 5px 20px;
+								border-radius: 5px;
+								background: rgb(255, 255, 255);
+								border-width: 1px;
+								border-style: solid;
+								border-color: rgb(204, 204, 204);
+								border-image: initial;
+							}
+						</style>
 					</div>
 					<div class="our-location__work-time">
 						<h3 class="our-location__subheading">Режим работы:</h3>
@@ -391,9 +418,9 @@
 			</div>
 		</footer>
 	</div>
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css?_v=20230826122211" /> -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js?_v=20230826122211"></script>
-	<script src="js/app.min.js?_v=20230826122211"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2/swiper-bundle.min.css?_v=20230826172302" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js?_v=20230826172302"></script>
+	<script src="js/app.min.js?_v=20230826172302"></script>
 </body>
 
 </html>
