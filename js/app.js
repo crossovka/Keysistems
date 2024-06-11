@@ -147,7 +147,7 @@
         const targetBlockElement = document.querySelector(targetBlock);
         if (targetBlockElement) {
             let headerItem = "";
-            let headerItemHeight = 0;
+            let headerItemHeight = 100;
             if (noHeader) {
                 headerItem = "header.header";
                 headerItemHeight = document.querySelector(headerItem).offsetHeight;
@@ -221,20 +221,22 @@
     }), 0);
     var mapTitle = document.createElement("div");
     mapTitle.className = "mapTitle";
-    mapTitle.textContent = "Для активации карты нажмите по ней";
-    wrapMap.appendChild(mapTitle);
-    wrapMap.onclick = function() {
-        this.children[0].removeAttribute("style");
-        mapTitle.parentElement.removeChild(mapTitle);
-    };
-    wrapMap.onmousemove = function(event) {
-        mapTitle.style.display = "block";
-        if (event.offsetY > 10) mapTitle.style.top = event.offsetY + 20 + "px";
-        if (event.offsetX > 10) mapTitle.style.left = event.offsetX + 20 + "px";
-    };
-    wrapMap.onmouseleave = function() {
-        mapTitle.style.display = "none";
-    };
+    if (!mapTitle) {
+        mapTitle.textContent = "Для активации карты нажмите по ней";
+        wrapMap.appendChild(mapTitle);
+        wrapMap.onclick = function() {
+            this.children[0].removeAttribute("style");
+            mapTitle.parentElement.removeChild(mapTitle);
+        };
+        wrapMap.onmousemove = function(event) {
+            mapTitle.style.display = "block";
+            if (event.offsetY > 10) mapTitle.style.top = event.offsetY + 20 + "px";
+            if (event.offsetX > 10) mapTitle.style.left = event.offsetX + 20 + "px";
+        };
+        wrapMap.onmouseleave = function() {
+            mapTitle.style.display = "none";
+        };
+    }
     window.onload = function() {
         const headerElement = document.querySelector(".header");
         const callback = function(entries, observer) {
