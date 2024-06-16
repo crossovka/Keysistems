@@ -113,6 +113,7 @@
         if (document.querySelector(".news__swiper-container")) new Swiper(".news__swiper-container", {
             observer: true,
             observeParents: true,
+						// autoheight: true,
             slidesPerView: 3,
             spaceBetween: 35,
             Touch: true,
